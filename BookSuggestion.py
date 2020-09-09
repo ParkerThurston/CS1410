@@ -1,4 +1,7 @@
 #read booklist
+from heapq import nlargest
+from operator import itemgetter
+
 with open("booklist.txt") as BookL:
     books = [tuple(line.strip().split(",")) for line in BookL]
 
@@ -32,8 +35,8 @@ def compute_scores():
 compute_scores()
 
 def friends(name):
-   #affinityScore = similarities[name]
-   pass
+   results = similarities[name]
+   
 
 print(books)
 print(ratings)
