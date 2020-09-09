@@ -34,12 +34,19 @@ def compute_scores():
 
 compute_scores()
 
+
 def friends(name):
-   results = similarities[name]
+   #afResults = similarities[name]
+   #topTwo = nlargest(2,afResults.items(),key=itemgetter(1))
+   #return sorted(topTwo)
+   pass
+
+   
    
 
-print(books)
-print(ratings)
+#print(books)
+#print(ratings)
+
 
 def main():
    #friends("ben")
