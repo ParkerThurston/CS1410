@@ -42,7 +42,7 @@ testName = input("Enter a readers name: ")
 if testName in ratings.keys():
     name = testName
 else:
-    print(testName + " is not in the list")
+    print(testName + " is not a name in the list")
     exit()
 
 def friends(name):
