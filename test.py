@@ -85,3 +85,5 @@
 
 #teacher code
 
+#print(reduce(max, [34, 21, 99, 67, 10]))
+
