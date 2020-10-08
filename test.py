@@ -87,3 +87,54 @@
 
 #print(reduce(max, [34, 21, 99, 67, 10]))
 
+#print("test \nfjowefj")
+# resp = input("Your command: ")
+
+# resp = resp.split()
+
+# if resp[0] == "quit":
+#     pass
+#     #return False
+# if resp[0] == "cancel":
+#     pass
+# elif resp[0] == "insert":
+#     if resp [1] == 50 or 25 or 10 or 5:
+#         credit = resp[1]
+#         print(credit)
+#         #return credit
+# elif resp[0] == "select":
+#     pass
+#     #if self.cashBox.credit < self.selector.# ??? price
+# else:
+#     print("Invalid entry")
+
+
+
+class Selector:
+    def __init__(self, cashbox):
+        self.cashBox = cashbox
+        self.prod = CoffeeMachine()
+        
+        
+
+    def select(self):
+        product = self.prod.products 
+        print(product)
+        
+
+class CoffeeMachine:
+    def __init__(self):
+        self.totalC = 0.0
+       # self.cashBox = CashBox()
+        self.products = ["1","2","3"]
+        #products.append(Product("Black", 35, "Making black: \nDispensing cup \nDispensing coffee \nDispensing water"))
+        #self.selector = Selector(self.cashBox)
+
+def Main():
+    F = Selector(100)
+    F.select()
+
+if __name__ == "__main__":
+    Main()
+
+
