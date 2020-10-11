@@ -110,31 +110,41 @@
 
 
 
-class Selector:
-    def __init__(self, cashbox):
-        self.cashBox = cashbox
-        self.prod = CoffeeMachine()
+# class Selector:
+#     def __init__(self, cashbox):
+#         self.cashBox = cashbox
+#         self.prod = CoffeeMachine()
         
         
 
-    def select(self):
-        product = self.prod.products 
-        print(product)
+#     def select(self):
+#         product = self.prod.products 
+#         print(product)
         
 
-class CoffeeMachine:
-    def __init__(self):
-        self.totalC = 0.0
-       # self.cashBox = CashBox()
-        self.products = ["1","2","3"]
-        #products.append(Product("Black", 35, "Making black: \nDispensing cup \nDispensing coffee \nDispensing water"))
-        #self.selector = Selector(self.cashBox)
+# class CoffeeMachine:
+#     def __init__(self):
+#         self.totalC = 0.0
+#        # self.cashBox = CashBox()
+#         self.products = ["1","2","3"]
+#         #products.append(Product("Black", 35, "Making black: \nDispensing cup \nDispensing coffee \nDispensing water"))
+#         #self.selector = Selector(self.cashBox)
 
-def Main():
-    F = Selector(100)
-    F.select()
+# def Main():
+#     F = Selector(100)
+#     F.select()
 
-if __name__ == "__main__":
-    Main()
+# if __name__ == "__main__":
+#     Main()
+
+
+# resp = input("put Price:")
+# resp = resp.split()
+# print(resp[3])
+
+products = {"black": "35", "white": 35, "sweet": 35, "white & sweet": 35, "bouillon": 25}
+
+print(products)
+print(products["black"])
 
 
