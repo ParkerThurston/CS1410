@@ -142,9 +142,27 @@
 # resp = resp.split()
 # print(resp[3])
 
-products = {"black": "35", "white": 35, "sweet": 35, "white & sweet": 35, "bouillon": 25}
+# products = {"black": "35", "white": 35, "sweet": 35, "white & sweet": 35, "bouillon": 25}
 
-print(products)
-print(products["black"])
+# print(products)
+# print(products["black"])
+
+lyst = ["Richard Adams, Watership Down",
+	"F. Scott Fitzgerald, The Great Gatsby",
+	"William Golding, Lord of the Flies"
+	"William Goldman, The Princess Bride",
+	"Daniel Keyes, Flowers For Algernon",
+	"Garth Nix, Sabriel",
+	"Jodi Picoult, My Sister's Keeper",
+	"J R R Tolkien, The Lord of the Rings"]
+Alyst = []
+for i in range(len(lyst)):
+    print("\t" + lyst[i] + ", " + lyst[i])
+
+#print(Alyst)
+
+
+       
+
 
 

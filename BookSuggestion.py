@@ -4,6 +4,7 @@
 from heapq import nlargest
 from operator import itemgetter
 
+
 #read booklist
 with open("booklist.txt") as BookL:
     books = [tuple(line.strip().split(",")) for line in BookL]
@@ -11,15 +12,15 @@ with open("booklist.txt") as BookL:
 #read ratings
 with open("ratings.txt") as RatingL:
     ratings = {}
-    NList = []
+    #NList = []
     while True:
             names = RatingL.readline().strip().lower()
             if not names:
                 break
             scores = RatingL.readline().strip().split()
             ratings[names] = [int(n) for n in scores]
-            NList.append(names)
-    NList.sort()
+            #NList.append(names)
+    #NList.sort()
 
 
 def dotprod(x, y):
@@ -28,9 +29,9 @@ def dotprod(x, y):
     return sum(x[i]*y[i] for i in range(len(x)))
 
 
+similarities = {}
 
 def compute_scores():
-    similarities = {}
     for name1 in ratings:
         for name2 in ratings:
                 if name1 != name2:
@@ -38,14 +39,14 @@ def compute_scores():
                     if affinityScore > 0:
                             similarities[name1] = similarities.get(name1, {})
                             similarities[name1][name2] = affinityScore
-    return similarities
+    #return similarities
 
 
-
+compute_scores()
 
 
 def friends(name):
-    similarities = compute_scores()
+    
     afResults = similarities[name]
     topTwo = [name for name, _ in nlargest(2,afResults.items(),key=itemgetter(1))]
     return sorted(topTwo)
@@ -69,21 +70,24 @@ def recommend(name, topTwo):
 
 
 def report():
-    f = open("AllRecomends.txt", 'w')
-    for i in range(len(NList)):
-        NlistTOP2 = friends(NList[i])
-        f.write("\nRecommendations for " + NList[i] + " from " + NlistTOP2[0] +" and " + NlistTOP2[1]+":")
-        compute_scores()
-        ANrecList = recommend(NList[i], NlistTOP2) 
-        for i in range(len(ANrecList)):
-            f.write("\n\t" + ANrecList[i][0] + ", " + ANrecList[i][1])
+    
+    s = ''
+    for name in sorted(similarities.keys()):
+        NlistTOP2 = friends(name)
+        s+= ("Recommendations for " +name + " from " + str(friends(name)[0]) + ' and ' + str(friends(name)[1]) + ': \n')
+        for b in recommend(name, NlistTOP2):
+            s+= ('\t' + str(b[0] + ", " + b[1]) +"\n")
+        s += "\n"
+    return s
+
+
         
 
 
 
 
 def main():
-    report()
+    
     testName = input("Enter a readers name: ")
 
     if testName in ratings.keys():
@@ -94,7 +98,7 @@ def main():
     
     topTwo = friends(name)
     print("Recommendations for " + name + " from " + topTwo[0] +" and " + topTwo[1])
-    compute_scores()
+    #compute_scores()
    
     recList = recommend(name, topTwo) 
     for i in range(len(recList)):
