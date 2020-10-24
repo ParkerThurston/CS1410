@@ -1,4 +1,5 @@
-import BookSuggestion 
+#This Code was written by Parker Thurston, with help from code that was done in class
+import BookSuggestionParkerThurston 
 from breezypythongui import EasyFrame
 
 class BookRecsGui(EasyFrame):
@@ -16,8 +17,8 @@ class BookRecsGui(EasyFrame):
 
     def getFriends(self):
         name = self.prompterBox("Friends", "Enter Reader Name:")
-        if name in BookSuggestion.ratings.keys():
-            friends = BookSuggestion.friends(name)
+        if name in BookSuggestionParkerThurston.ratings.keys():
+            friends = BookSuggestionParkerThurston.friends(name)
             self.messageBox("Friends of " + name, friends[0] +'\n'+friends[1])
         else:
             self.messageBox("Error", "No such reader.")
@@ -25,9 +26,9 @@ class BookRecsGui(EasyFrame):
 
     def recommendations(self):
         name = self.prompterBox("Recommendations", "Enter Reader Name:")
-        if name in BookSuggestion.ratings.keys():
-            top2 = BookSuggestion.friends(name)
-            recommends = BookSuggestion.recommend(name,top2)
+        if name in BookSuggestionParkerThurston.ratings.keys():
+            top2 = BookSuggestionParkerThurston.friends(name)
+            recommends = BookSuggestionParkerThurston.recommend(name,top2)
             brStr = ""
             for book in recommends:
                 brStr += book[0] +", " + book[1] +"\n"
@@ -36,7 +37,7 @@ class BookRecsGui(EasyFrame):
            self.messageBox("Error", "No such reader.") 
     def Report(self):
         
-        self.messageBox("Report", BookSuggestion.report(), width = 100, height= 50)
+        self.messageBox("Report", BookSuggestionParkerThurston.report(), width = 100, height= 50)
     
     
 
