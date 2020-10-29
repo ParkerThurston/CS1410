@@ -1,0 +1,77 @@
+'''
+    p5.py: Illustrates the payroll module.
+'''
+
+from payroll import *
+import os, os.path, shutil
+
+PAY_LOGFILE = ""
+employees = []
+
+def load_employees():
+    with open("employees.csv", "r") as reader:
+        reader.readline()
+
+        while reader:
+            emp = reader.readline().strip().split(',')
+            if emp[0] == "":
+                return
+            new_emp = Employee(emp[0], emp[1], emp[2], emp[3], emp[4], emp[5], emp[6])
+
+            if emp[7] == "3": #Hourly Emp
+                new_emp.make_hourly(emp[10])
+            elif emp[7] == "2": #Commissioned Emp
+                pass
+            else: # Salaried Emp
+                pass
+
+            employees.append(new_emp)
+
+def process_timecards():
+    pass
+
+def process_receipts():
+    pass
+
+def run_payroll():
+    pass
+
+def find_employee_by_id(id):
+    return None
+def main():
+    load_employees()
+    process_timecards()
+    process_receipts()
+    run_payroll()
+
+    # # Save copy of payroll file; delete old file
+    # shutil.copyfile(PAY_LOGFILE, 'paylog_old.txt')
+    # if os.path.exists(PAY_LOGFILE):
+    #     os.remove(PAY_LOGFILE)
+
+    # # Change Issie Scholard to Salaried by changing the Employee object:
+    # emp = find_employee_by_id('51-4678119')
+    # emp.make_salaried(134386.51)
+    # emp.issue_payment()
+
+    # # Change Reynard,Lorenzin to Commissioned; add some receipts
+    # emp = find_employee_by_id('11-0469486')
+    # emp.make_commissioned(50005.50, 27)
+    # clas = emp.classification
+    # clas.add_receipt(1109.73)
+    # clas.add_receipt(746.10)
+    # emp.issue_payment()
+
+    # # Change Jed Netti to Hourly; add some hour entries
+    # emp = find_employee_by_id('68-9609244')
+    # emp.make_hourly(47)
+    # clas = emp.classification
+    # clas.add_timecard(8.0)
+    # clas.add_timecard(8.0)
+    # clas.add_timecard(8.0)
+    # clas.add_timecard(8.0)
+    # clas.add_timecard(8.0)
+    # emp.issue_payment()
+
+if __name__ == '__main__':
+    main()

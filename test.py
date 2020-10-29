@@ -147,22 +147,23 @@
 # print(products)
 # print(products["black"])
 
-lyst = ["Richard Adams, Watership Down",
-	"F. Scott Fitzgerald, The Great Gatsby",
-	"William Golding, Lord of the Flies"
-	"William Goldman, The Princess Bride",
-	"Daniel Keyes, Flowers For Algernon",
-	"Garth Nix, Sabriel",
-	"Jodi Picoult, My Sister's Keeper",
-	"J R R Tolkien, The Lord of the Rings"]
-Alyst = []
-for i in range(len(lyst)):
-    print("\t" + lyst[i] + ", " + lyst[i])
+# lyst = ["Richard Adams, Watership Down",
+# 	"F. Scott Fitzgerald, The Great Gatsby",
+# 	"William Golding, Lord of the Flies"
+# 	"William Goldman, The Princess Bride",
+# 	"Daniel Keyes, Flowers For Algernon",
+# 	"Garth Nix, Sabriel",
+# 	"Jodi Picoult, My Sister's Keeper",
+# 	"J R R Tolkien, The Lord of the Rings"]
+# Alyst = []
+# for i in range(len(lyst)):
+#     print("\t" + lyst[i] + ", " + lyst[i])
 
 #print(Alyst)
 
 
        
+lyst = [1,2,3,4]
 
-
-
+for i in range(len(lyst)):
+	print(lyst[i])
