@@ -10,17 +10,17 @@ class P2Test(unittest.TestCase):
         for d in range(10):
             self.emp.classification.add_timecard(4.0 + d*0.5)
         self.assertEqual(self.emp.classification.compute_pay(), 62.5*rate)
-    # def testSalaried(self):
-    #     salary = 10100.0
-    #     self.emp.make_salaried(salary)
-    #     self.assertEqual(self.emp.classification.compute_pay(), round(salary/24, 2))
-    # def testCommissioned(self):
-    #     salary = 50000.0
-    #     rate = 25
-    #     self.emp.make_commissioned(salary, rate)
-    #     for d in range(5):
-    #         self.emp.classification.add_receipt(400.0 + d*25)
-    #     self.assertEqual(self.emp.classification.compute_pay(), round(salary/24+2250.0*rate/100.0, 2))
+    def testSalaried(self):
+        salary = 10100.0
+        self.emp.make_salaried(salary)
+        self.assertEqual(self.emp.classification.compute_pay(), round(salary/24, 2))
+    def testCommissioned(self):
+        salary = 50000.0
+        rate = 25
+        self.emp.make_commissioned(salary, rate)
+        for d in range(5):
+            self.emp.classification.add_receipt(400.0 + d*25)
+        self.assertEqual(self.emp.classification.compute_pay(), round(salary/24+2250.0*rate/100.0, 2))
 
 if __name__ == '__main__':
     unittest.main()

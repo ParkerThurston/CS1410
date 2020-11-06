@@ -37,7 +37,9 @@ def run_payroll():
     pass
 
 def find_employee_by_id(id):
-    return None
+    if id == employees.emp
+        
+    pass
 def main():
     load_employees()
     process_timecards()
