@@ -13,14 +13,22 @@ class Employee:
     
     def make_hourly(self, rate):
         self.classification = Hourly(rate)
+
+    def make_salarised(self, salary):
+        #self.classification = Salaried(salary)
+        pass
+
+    def make_commissioned(self, salary, rate):
+        #self.classification = Commissioned(salary, rate)
+        pass
     
     
 class Classification:
     def __init__(self):
-        pass
+        emp = Employee()
 
     @abstractmethod
-    def compute_pay(self):
+    def issue_payment(self):
         pass
 
 
@@ -38,4 +46,24 @@ class Hourly(Classification):
             total_hours_worked += hours
 
         return round(total_hours_worked * self.hourly_rate, 2)
-    
+
+class Salarised(Classification):
+    def __init__(self, salary):
+        self.salary = salary
+
+    def compute_pay(self):
+        return round(self.salary / 24)
+        
+        
+
+class Commissioned(Classification):
+    def __init__(self, salary, rate):
+        self.salary = salary
+        self.commission_rate = commission_rate
+        self.receipts = []
+
+    def add_receipt(self, amount):
+        pass
+
+    def compute_pay(self):
+        pass
