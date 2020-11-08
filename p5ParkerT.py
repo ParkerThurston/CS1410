@@ -1,8 +1,9 @@
+#Code written by Parker Thurston with help from Class (With some extra help from Hannah Young)
 '''
     p5.py: Illustrates the payroll module.
 '''
 
-from payroll import *
+from payrollParkerT import *
 import os, os.path, shutil
 
 PAY_LOGFILE = 'paylog.txt'
@@ -23,28 +24,54 @@ def load_employees():
             elif emp[7] == "2": #Commissioned Emp
                 new_emp.make_commissioned(emp[8], emp[9])
             else: # Salaried Emp
-                new_emp.make_salarised(emp[8])
+                new_emp.make_salaried(emp[8])
 
             employees.append(new_emp)
 
 def process_timecards():
-    pass
+    with open("timecards.csv", "r") as reader:
+        
+        while reader:
+            timecard = reader.readline().strip().split(',')
+            if timecard[0] =="":
+                return
+
+            employ = find_employee_by_id(timecard[0])
+            if employ != None:
+                for i in range(1,len(timecard)):
+                    employ.classification.add_timecard(timecard[i])
+
 
 def process_receipts():
-    pass
+    with open("receipts.csv", "r") as reader:
+
+        while reader:
+            receipt = reader.readline().strip().split(',')
+            if receipt[0] == "":
+                return
+            employ = find_employee_by_id(receipt[0])
+            if employ != None:
+                for i in range(1,len(receipt)):
+                    employ.classification.add_receipt(receipt[i])
+                
 
 
 def run_payroll():
-    if os.path.exists(PAY_LOGFILE): # pay_log_file is a global variable holding ‘payroll.txt’
+    if os.path.exists(PAY_LOGFILE):          # pay_log_file is a global variable holding ‘payroll.txt’
         os.remove(PAY_LOGFILE)
-    for emp in employees:# employees is the global list of Employee objects
+    for emp in employees:          # employees is the global list of Employee objects
         emp.issue_payment()
 
-def find_employee_by_id(id):
-     #if employees[i] emp   
-     pass 
-     
 
+def find_employee_by_id(number):
+    for emp in employees:
+        emp_id = emp.get_employee_id()
+        if emp_id == number:
+            return emp
+    return None
+        
+
+    
 def main():
     load_employees()
     process_timecards()
