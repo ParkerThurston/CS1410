@@ -163,7 +163,26 @@
 
 
        
-lyst = [1,2,3,4]
+# lyst = [1,2,3,4]
 
-for i in range(len(lyst)):
-	print(lyst[i])
+# for i in range(len(lyst)):
+# 	print(lyst[i])
+
+def main():
+    myCount = Count()
+    times = 0
+
+    for i in range(0, 100):
+        increment(myCount, times)
+
+    print("myCount.count =", myCount.count, "times =", times)
+
+def increment(c, times):
+    c.count += 1
+    times += 1
+
+class Count:
+    def __init__(self):
+        self.count = 0
+    
+main()
