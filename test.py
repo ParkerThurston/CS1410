@@ -168,21 +168,27 @@
 # for i in range(len(lyst)):
 # 	print(lyst[i])
 
-def main():
-    myCount = Count()
-    times = 0
+# def main():
+#     myCount = Count()
+#     times = 0
 
-    for i in range(0, 100):
-        increment(myCount, times)
+#     for i in range(0, 100):
+#         increment(myCount, times)
 
-    print("myCount.count =", myCount.count, "times =", times)
+#     print("myCount.count =", myCount.count, "times =", times)
 
-def increment(c, times):
-    c.count += 1
-    times += 1
+# def increment(c, times):
+#     c.count += 1
+#     times += 1
 
-class Count:
-    def __init__(self):
-        self.count = 0
+# class Count:
+#     def __init__(self):
+#         self.count = 0
     
-main()
+# main()
+
+import matplotlib.pyplot as plt 
+
+plt.plot([1,2,3,4])
+plt.ylabel("y label")
+plt.show()
