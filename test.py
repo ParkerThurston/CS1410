@@ -187,8 +187,8 @@
     
 # main()
 
-import matplotlib.pyplot as plt 
+# import matplotlib.pyplot as plt 
 
-plt.plot([1,2,3,4])
-plt.ylabel("y label")
-plt.show()
+# plt.plot([1,2,3,10])
+# plt.ylabel("y label")
+# plt.show()

@@ -1,5 +1,6 @@
 import glob
 import numpy as np
+import array as arr
 
 def analyze(fname):
     #Read the raw data
@@ -23,11 +24,11 @@ def smooth(data):
     res = data.copy()
 
     for i in range(3, len(data)-3):
-        res[i] = (data[i-3] +2 * data[i-2] +3 * data[i-1] + 3 * data[i] + 3* data[i+1} + 2])
+        res[i] = (data[i-3] + 2 * data[i-2] + 3 * data[i-1] + 3 * data[i] + 3* data[i+1] + 2 *data[i+2] + data[i+3]) // 15
 
 def main():
     for fname in glob.glob('*.dat'):
         analyze(fname)
 
-def if __name__ == "__main__":
-    main():
+if __name__ == "__main__":
+    main()
