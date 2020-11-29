@@ -8,6 +8,7 @@ def analyze(fname):
     raw_data = np.loadtxt(fname)
     #smooth raw data
     smooth_data = smooth(raw_data)
+    
 
     #Find pulses
     pulses = []
@@ -20,13 +21,13 @@ def analyze(fname):
             i += 1
             while i < len(smooth_data) and smooth_data[i+1] > smooth_data[i]:
                 i+= 1
-
+    
     #plot the data
     _,axes = plt.subplots(nrows=2)
     axes[0].plot(raw_data)
-    axes[0].set(title=fname, ylabel="raw", xticks= [])
+    axes[0].set(title=fname, ylabel="Raw", xticks= [])
     axes[1].plot(smooth_data)
-    axes[1].set(ylabel="smooth", xticks= [])
+    axes[1].set(ylabel="Smooth")
     #plt.show()
 
     pdf_file = fname[:-3] +"pdf"
@@ -34,6 +35,31 @@ def analyze(fname):
     # Calculated area and write to file
 
 
+    # area = 0
+    # k = 0
+    # for i in range(len(pulses)-1):
+    #     while (pulses[i+k] < pulses[i+1]):
+    #         area = raw_data[i]
+    #         k+=1
+        
+    #     print( i +"    ("+area+")")
+    #     i+=1
+
+
+
+    pulse_end = pulses[-2]
+    k = 0
+    pulse_area = 0
+
+
+    for i in pulses:
+        if i != pulse_end:
+            var = pulses[k+1]
+            while( i < var):
+                pulse_area += raw_data[i]
+                i+=1
+            k+=1
+            
     
 
 def smooth(data):
@@ -48,7 +74,6 @@ def smooth(data):
     return res
 
 
-
 def main():
     for fname in glob.glob('*.dat'):
         analyze(fname)
@@ -56,4 +81,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
 
