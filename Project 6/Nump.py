@@ -1,9 +1,12 @@
-# import numpy as np
+# import sys
 
-# a = np.array(range(10), 'i2')
+# print(sys.path)
+import numpy as np
 
-# print(a)
+a = np.array(range(10), 'i2')
 
-# print(-a)
+print(a)
 
-# print(a + 1 )
+print(-a)
+
+print(a + 1 )

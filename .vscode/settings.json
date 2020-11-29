@@ -2,11 +2,13 @@
     "python.testing.unittestArgs": [
         "-v",
         "-s",
-        ".",
+        "./Project 5",
         "-p",
         "*test.py"
     ],
     "python.testing.pytestEnabled": false,
     "python.testing.nosetestsEnabled": false,
-    "python.testing.unittestEnabled": true
+    "python.testing.unittestEnabled": true,
+    "python.testing.promptToConfigure": true,
+    "python.pythonPath": "C:\\Users\\Budde\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe"
 }

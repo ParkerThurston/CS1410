@@ -3,7 +3,7 @@
     p5.py: Illustrates the payroll module.
 '''
 
-from payrollParkerT import *
+from payroll import *
 import os, os.path, shutil
 
 PAY_LOGFILE = 'paylog.txt'
