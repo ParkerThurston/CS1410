@@ -1,0 +1,11 @@
+CIA_A: Outputs 
+Elapsed Time: 32.9882432 seconds 
+3110197 bytes downloaded 
+
+CIA_B: Outputs 
+Elapsed Time: 32.6656801 seconds 
+3110197 bytes downloaded 
+
+CIA_C: Outputs 
+Elapsed Time: 32.819813 seconds 
+3110197 bytes downloaded 
