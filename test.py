@@ -192,3 +192,42 @@
 # plt.plot([1,2,3,10])
 # plt.ylabel("y label")
 # plt.show()
+
+
+# count = 0
+# while count < 100:
+#      # Point A
+#      print("Welcome to Python!")
+#      count += 1
+#      # Point B
+
+# print(count)
+
+# m = [[x, x + 2, x + 1] for x in range(1, 9, 3)]
+# print(m)
+
+# points = [[1, 2], [3, 1.5], [0.5, 0.5]]
+# points.sort()
+# print(points)
+
+# d = {"john":40, 25:"peter"} 
+# d = { }
+# d = {40:"john", 45:"peter"}  
+# d = (40:"john", 45:"peter") 
+
+class A:
+    def __init__(self):
+        self.setI(10)
+
+    def setI(self, i):
+        self.i = 2 * i;
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("i from B is", self.i)
+        
+    def setI(self, i):
+        self.i = 3 * i;
+
+b = B()
